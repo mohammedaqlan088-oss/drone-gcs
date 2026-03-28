@@ -111,7 +111,7 @@ function App() {
           className="group relative overflow-hidden bg-red-600 hover:bg-red-500 py-6 rounded-2xl font-black uppercase transition-all active:scale-95 shadow-[0_20px_50px_rgba(184,_8,_8,_0.2)]"
         >
           <span className="relative z-10 flex items-center justify-center gap-3">
-             Emergency Land (هبوط اضطراري)
+             Emergency Land (اطفاء)
           </span>
         </button>
       </div>
