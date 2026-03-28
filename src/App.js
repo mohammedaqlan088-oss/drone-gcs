@@ -41,9 +41,7 @@ function App() {
     if (client && status === 'Connected') {
       client.publish('drone/commands', action);
       console.log("Sent Command:", action);
-      
-      // تنبيه بسيط للمستخدم عند الضغط
-      alert(`تم إرسال أمر: ${action}`);
+  
     } else {
       alert("عذراً، الجهاز غير متصل بالسيرفر حالياً!");
     }
