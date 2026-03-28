@@ -15,7 +15,6 @@ function App() {
       mqttClient.subscribe('drone/aqlan');
       console.log("Connected to HiveMQ");
     });
-
     mqttClient.on('message', (topic, message) => {
       try {
         const data = JSON.parse(message.toString());
@@ -65,11 +64,12 @@ function App() {
           {status}
         </div>
       </div>
+   
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-slate-800/40 p-8 rounded-3xl border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-colors group">
-          <p className="text-slate-500 text-xs font-bold uppercase mb-4 tracking-widest group-hover:text-blue-400">Altitude (الارتفاع)</p>
+          <p className="text-slate-500 text-xs font-bold uppercase mb-4 tracking-widest group-hover:text-blue-400">Altitude (loction)</p>
           <div className="flex items-baseline gap-2">
             <span className="text-6xl font-black text-white leading-none">{telemetry.alt}</span>
             <span className="text-xl font-bold text-blue-500">m</span>
@@ -86,13 +86,7 @@ function App() {
           </div>
         </div>
 
-        <div className="bg-slate-800/40 p-8 rounded-3xl border border-slate-700/50 backdrop-blur-md hover:border-yellow-500/50 transition-colors group">
-          <p className="text-slate-500 text-xs font-bold uppercase mb-4 tracking-widest group-hover:text-yellow-400">Speed (السرعة)</p>
-          <div className="flex items-baseline gap-2">
-            <span className="text-6xl font-black text-yellow-400 leading-none">{telemetry.speed}</span>
-            <span className="text-xl font-bold text-slate-600">km/h</span>
-          </div>
-        </div>
+    
       </div>
 
       {/* Controls */}
@@ -116,10 +110,23 @@ function App() {
         </button>
       </div>
       
+      <div dir="rtl" className="min-h-screen bg-slate-900 text-white p-10 text-center font-sans">
+      <h1 className="text-4xl font-bold text-blue-500 mb-4">
+       م /المهندس محمد عقلان
+      </h1>
+      <p className="text-gray-400"> نظام تحكم عن بعد </p>
+      
+      <div className="mt-10 p-6 bg-slate-800 rounded-2xl border border-blue-500/30 inline-block">
+        <p className="text-xl">الرابط الآن يعمل بنجاح!</p>
+      </div>
+    </div>
+ 
+
       <p className="mt-12 text-center text-[10px] text-slate-600 uppercase tracking-widest">
         Designed by Eng. Mohammed Aqlan | Project Alpha v1
       </p>
     </div>
+    
   );
 }
 
